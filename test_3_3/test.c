@@ -2,7 +2,9 @@
 
 #include<stdio.h>
 #include<string.h>
-
+#include<math.h>
+#include<stdbool.h>
+#include"add.h"
 
 #define MAX 1000
 int jiecheng(int n) {
@@ -132,12 +134,90 @@ int main() {
 	printf("%d\n", sizeof(f1)); // 输出4，float类型占4字节
 	printf("%d\n", sizeof(f2)); // 输出8，double类型占8字节
 
+	printf("%d\n",Add(10, 20));
 
+	printf("%5.3f\n", 3.14e5); // %5.3f表示输出一个浮点数，至少占5个字符宽度，小数部分保留3位，结果是314000.000
 
+	printf("%e\n", 314.159);
 
+	// 选择结构
 
+	double a1 = 0.0, b1 = 0.0, c1 = 0.0;
+	double x1 = 0.0, x2 = 0.0;
+	// scanf("%lf %lf %lf", &a1, &b1, &c1);
+	double delta = b1 * b1 - 4 * a1 * c1;
+	if (delta >= 0) {
+		x1 = (-b1 + sqrt(delta)) / (2 * a1);
+		x2 = (-b1 - sqrt(delta)) / (2 * a1);
+		printf("有实根,x1=%.2lf,x2=%.2lf\n",x1,x2);
+	}
+	else {
+		printf("无实根\n");
+	}
 
+	_Bool flag = true; // _Bool是C99引入的布尔类型，flag是一个布尔变量，值为1表示真，0表示假
+	printf("bool is %d\n", flag); // 输出1，表示flag的值为真
 
+	int day = 8;
+	// scanf("%d", &day);
+	switch (day) {
+	case 1:
+		printf("1\n");
+		break;
+	case 2:
+		printf("2\n");
+		break;
+	case 3:
+		printf("3\n");
+		break;
+	case 4:
+		printf("4\n");
+		break;
+	case 5:
+		printf("5\n");
+		break;
+	case 6:
+		printf("6\n");
+		break;
+	case 7:
+		printf("7\n");
+		break;
+	default:
+		printf("error\n");
+	}
+
+	i = 0;
+	int sum1 = 0;
+	do {
+		sum1 += i;
+		i++;
+	} while (i <= 100);
+
+	printf("%d\n", sum1);
+
+	i = 0;
+	int j = 0;
+	for (i = 1; i <= 4; i++) {
+		for(j = 1; j <= 5; j++) {
+			printf("%d\t", i * j);
+		}
+		printf("\n");
+	}
+
+	// 求π
+	double sum2 = 0.0;
+	double pi = 0.0;
+	i = 1;
+	int flag1 = 1;
+	while (1) {
+		if (fabs(flag * (1.0 / i)) < 1e-6)
+			break;
+		sum2 += flag1 * (1.0 / i);
+		i += 2;
+		flag1 = -flag1;
+	}
+	printf("%f\n", sum2 * 4);
+	
 	return 0;
 }
 
