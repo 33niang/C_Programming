@@ -27,6 +27,12 @@
     <ClCompile Include="test0311.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="function.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test03_18.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h">
